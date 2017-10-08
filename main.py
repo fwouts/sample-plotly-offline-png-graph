@@ -43,11 +43,11 @@ def extract_svg_code(html_file_path):
 def make_png_graph(data, title):
     """Generates the PNG graph."""
     html_file_path = os.path.join(os.getcwd(), HTML_FILENAME)
-    svg_file_path = os.path.join(os.getcwd(), OUTPUT_FILENAME)
+    png_file_path = os.path.join(os.getcwd(), OUTPUT_FILENAME)
     generate_html_graph(html_file_path, data, title)
     svg_code = extract_svg_code(html_file_path)
     os.remove(html_file_path)
-    cairosvg.svg2png(bytestring=svg_code, write_to=svg_file_path)
+    cairosvg.svg2png(bytestring=svg_code, write_to=png_file_path)
 
 
 if __name__ == "__main__":
